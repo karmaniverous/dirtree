@@ -2,7 +2,35 @@
 
 Parses a directory into a nicely-formatted ASCII tree. Includes a CLI.
 
-## From Your Code
+## An Example
+
+```text
+PS C:\Code\dirtree> dirtree -d src -a size
+└─ src
+   ├─ cli
+   │  └─ index.mjs: 1344
+   └─ export
+      ├─ dirtree
+      │  ├─ dirtree.mjs: 2045
+      │  └─ dirtree.test.mjs: 303
+      └─ index.mjs: 73
+```
+
+## CLI Options
+
+```text
+Usage: dirtree [options]
+
+Options:
+  -a, --attribute <string>  Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats
+  -n, --depth <int>         Limit the tree to this depth. Default is unlimited.
+  -d, --dir <string>        Path to starting directory. Defaults to current working directory.
+  -e, --exclude <string>    RegExp pattern to exclude paths from tree.
+  -v, --version             Display package version.
+  -h, --help                display help for command
+```
+
+## JS API
 
 ```js
 /**
@@ -17,32 +45,4 @@ Parses a directory into a nicely-formatted ASCII tree. Includes a CLI.
  * @param {RegExp} [options.exclude] - RegExp pattern to exclude paths from tree.
  * @returns {string} ASCII tree.
  */
-```
-
-## From the Command Line
-
-```text
-Usage: dirtree [options]
-
-Options:
-  -a, --attribute <string>  Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats
-  -n, --depth <int>         Limit the tree to this depth. Default is unlimited.
-  -d, --dir <string>        Path to starting directory. Defaults to current working directory.
-  -e, --exclude <string>    RegExp pattern to exclude paths from tree.
-  -v, --version             Display package version.
-  -h, --help                display help for command
-```
-
-## An Example
-
-```text
-PS C:\Code\dirtree> dirtree -d src -a size
-└─ src
-   ├─ cli
-   │  └─ index.mjs: 1344
-   └─ export
-      ├─ dirtree
-      │  ├─ dirtree.mjs: 2045
-      │  └─ dirtree.test.mjs: 303
-      └─ index.mjs: 73
 ```
