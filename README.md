@@ -1,7 +1,6 @@
 # dirtree
 
-This widget parses a directory and turns it into a nicely-formatted ASCII tree.
-You can also run it from the command line.
+Parses a directory into a nicely-formatted ASCII tree. Includes a CLI.
 
 ## From Your Code
 
