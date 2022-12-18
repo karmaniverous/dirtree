@@ -12,16 +12,15 @@
   "bugs": {
     "url": "https://github.com/karmaniverous/dirtree/issues"
   },
-  "description": "An ES6 NPM package project template featuring mocha/chai test support and a CLI.",
+  "description": "Parses a directory into a nicely-formatted ASCII tree. Includes a CLI.",
   "homepage": "https://github.com/karmaniverous/dirtree#readme",
   "keywords": [
-    "testing",
-    "template",
-    "npm",
-    "package",
-    "mocha",
-    "chai",
-    "release"
+    "console",
+    "directory-tree",
+    "pretty-print",
+    "terminal",
+    "tree",
+    "treeify"
   ],
   "license": "BSD-3-Clause",
   "bin": "lib/cli/index.js",
