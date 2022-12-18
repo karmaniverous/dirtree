@@ -12,6 +12,8 @@ import dirtree from '../export';
 // Create CLI.
 import { program } from 'commander';
 
+program.name('dirtree');
+
 // Define CLI options.
 program.option(
   '-a, --attribute <string>',
