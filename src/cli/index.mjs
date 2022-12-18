@@ -1,23 +1,52 @@
 #!/usr/bin/env node
 
+import _ from 'lodash';
+
 // Load environment variables.
 import dotenv from 'dotenv';
 dotenv.config();
 
 // Import package exports.
-import { foo } from '../export/index.mjs';
+import dirtree from '../export';
 
 // Create CLI.
 import { program } from 'commander';
 
 // Define CLI options.
-program.option('-b, --bar <string>', 'What to say?');
-program.option('-v, --version', 'Version');
+program.option(
+  '-a, --attribute <string>',
+  'Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats'
+);
+
+// program.option('-b, --debug', 'Log internals.');
+
+program.option(
+  '-n, --depth <int>',
+  'Limit the tree to this depth. Default is unlimited.',
+  (value) => (_.isNil(value) ? value : parseInt(value))
+);
+
+program.option(
+  '-d, --dir <string>',
+  'Path to starting directory. Defaults to current working directory.'
+);
+
+program.option(
+  '-e, --exclude <string>',
+  'RegExp pattern to exclude paths from tree.',
+  (value) => (value ? new RegExp(value) : undefined)
+);
+
+program.option('-v, --version', 'Display package version.');
 
 // Parse CLI options from command line.
 program.parse();
-const { bar, version } = program.opts();
+const { attribute, debug, depth, dir, exclude, version } = program.opts();
 
 // Execute CLI logic.
 if (version) console.log(process.env.NODE_PACKAGE_VERSION);
-else console.log(`foo ${foo(bar)}!`);
+else {
+  const output = dirtree({ attribute, debug, depth, dir, exclude });
+
+  if (!debug) console.log(output);
+}

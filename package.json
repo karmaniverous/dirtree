@@ -1,19 +1,19 @@
 {
-  "name": "@karmaniverous/npm-package-template",
-  "version": "0.4.0",
+  "name": "@karmaniverous/dirtree",
+  "version": "0.0.0",
   "publishConfig": {
     "access": "public"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/karmaniverous/npm-package-template"
+    "url": "https://github.com/karmaniverous/dirtree"
   },
   "author": "Jason G. Williscroft",
   "bugs": {
-    "url": "https://github.com/karmaniverous/npm-package-template/issues"
+    "url": "https://github.com/karmaniverous/dirtree/issues"
   },
   "description": "An ES6 NPM package project template featuring mocha/chai test support and a CLI.",
-  "homepage": "https://github.com/karmaniverous/npm-package-template#readme",
+  "homepage": "https://github.com/karmaniverous/dirtree#readme",
   "keywords": [
     "testing",
     "template",
@@ -27,8 +27,10 @@
   "bin": "lib/cli/index.js",
   "dependencies": {
     "commander": "^9.4.1",
+    "directory-tree": "^3.4.0",
     "dotenv": "^16.0.3",
-    "lodash": "^4.17.21"
+    "lodash": "^4.17.21",
+    "treeify": "^1.1.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.19.3",
