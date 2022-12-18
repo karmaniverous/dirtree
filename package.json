@@ -1,0 +1,78 @@
+{
+  "name": "@karmaniverous/npm-package-template",
+  "version": "0.4.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karmaniverous/npm-package-template"
+  },
+  "author": "Jason G. Williscroft",
+  "bugs": {
+    "url": "https://github.com/karmaniverous/npm-package-template/issues"
+  },
+  "description": "An ES6 NPM package project template featuring mocha/chai test support and a CLI.",
+  "homepage": "https://github.com/karmaniverous/npm-package-template#readme",
+  "keywords": [
+    "testing",
+    "template",
+    "npm",
+    "package",
+    "mocha",
+    "chai",
+    "release"
+  ],
+  "license": "BSD-3-Clause",
+  "bin": "lib/cli/index.js",
+  "dependencies": {
+    "commander": "^9.4.1",
+    "dotenv": "^16.0.3",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.5",
+    "@babel/eslint-parser": "^7.19.1",
+    "@babel/plugin-syntax-import-assertions": "^7.20.0",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/register": "^7.18.9",
+    "@types/node": "^18.11.17",
+    "babel-plugin-lodash": "^3.3.4",
+    "babel-plugin-module-extension": "^0.1.3",
+    "babel-plugin-transform-inline-environment-variables": "^0.4.4",
+    "chai": "^4.3.7",
+    "dotenv-cli": "^6.0.0",
+    "eslint": "^8.30.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "release-it": "^15.5.1",
+    "rimraf": "^3.0.2"
+  },
+  "main": "lib/export/index.js",
+  "mocha": {
+    "exclude": [
+      "./lib/**",
+      "./node_modules/**"
+    ],
+    "require": [
+      "@babel/register"
+    ],
+    "spec": "./**/*.test.!(*.*)"
+  },
+  "release-it": {
+    "github": {
+      "release": true
+    },
+    "npm": {
+      "publish": true
+    }
+  },
+  "scripts": {
+    "build": "rimraf ./lib && babel src -d lib --config-file ./build.config.js",
+    "release": "dotenv -c -- release-it",
+    "test": "mocha"
+  }
+}
