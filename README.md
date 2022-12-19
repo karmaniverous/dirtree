@@ -32,6 +32,10 @@ Options:
 
 # API Documentation
 
+```js
+import dirtree from '@karmaniverous/dirtree`;
+```
+
 <a name="dirtree"></a>
 
 ## dirtree([options]) ⇒ <code>string</code>
