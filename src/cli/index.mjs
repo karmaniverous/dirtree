@@ -12,7 +12,9 @@ import dirtree from '../export';
 // Create CLI.
 import { program } from 'commander';
 
+// CLI description.
 program.name('dirtree');
+program.description('Parses a directory into a nicely-formatted ASCII tree.');
 
 // Define CLI options.
 program.option(
