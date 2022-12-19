@@ -16,7 +16,7 @@ PS C:\Code\dirtree> dirtree -d src -a size
       └─ index.mjs: 73
 ```
 
-## CLI Options
+# Command Line Interface
 
 ```text
 Usage: dirtree [options]
@@ -30,19 +30,27 @@ Options:
   -h, --help                display help for command
 ```
 
-## JS API
+# API Documentation
 
-```js
-/**
- * Extracts an ascii tree representing the file structure under a directory path.
- *
- * @function dirtree
- * @param {Object} [options] - Options object.
- * @param {string} [options.attribute] - Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats
- * @param {boolean} [options.debug] - Log intermediate steps to console.
- * @param {number} [options.depth] - Limit the tree to this depth. Default is unlimited.
- * @param {string} [options.dir] - Path to starting directory. Defaults to current working directory.
- * @param {RegExp} [options.exclude] - RegExp pattern to exclude paths from tree.
- * @returns {string} ASCII tree.
- */
-```
+<a name="dirtree"></a>
+
+## dirtree([options]) ⇒ <code>string</code>
+Extracts an ascii tree representing the file structure under a directory path.
+
+**Kind**: global function  
+**Returns**: <code>string</code> - ASCII tree.  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| [options] | <code>Object</code> | Options object. |
+| [options.attribute] | <code>string</code> | Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats |
+| [options.debug] | <code>boolean</code> | Log intermediate steps to console. |
+| [options.depth] | <code>number</code> | Limit the tree to this depth. Default is unlimited. |
+| [options.dir] | <code>string</code> | Path to starting directory. Defaults to current working directory. |
+| [options.exclude] | <code>RegExp</code> | RegExp pattern to exclude paths from tree. |
+
+
+---
+
+See more great templates and other tools on
+[my GitHub Profile](https://github.com/karmaniverous)!
