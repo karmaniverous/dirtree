@@ -33,7 +33,7 @@ Options:
 # API Documentation
 
 ```js
-import dirtree from '@karmaniverous/dirtree`;
+import { dirtree } from '@karmaniverous/dirtree`;
 ```
 
 <a name="dirtree"></a>

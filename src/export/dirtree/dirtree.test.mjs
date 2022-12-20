@@ -5,7 +5,7 @@ import chai from 'chai';
 chai.should();
 
 // subject imports
-import dirtree from './dirtree.mjs';
+import { dirtree } from './dirtree.mjs';
 
 describe('dirtree', function () {
   it('returns a string', function () {

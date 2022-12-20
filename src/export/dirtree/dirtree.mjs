@@ -38,15 +38,17 @@ const transform = (obj, attribute, debug) => {
  * Extracts an ascii tree representing the file structure under a directory path.
  *
  * @function dirtree
+ *
  * @param {Object} [options] - Options object.
  * @param {string} [options.attribute] - Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats
  * @param {boolean} [options.debug] - Log intermediate steps to console.
  * @param {number} [options.depth] - Limit the tree to this depth. Default is unlimited.
  * @param {string} [options.dir] - Path to starting directory. Defaults to current working directory.
  * @param {RegExp} [options.exclude] - RegExp pattern to exclude paths from tree.
+ *
  * @returns {string} ASCII tree.
  */
-const dirtree = (options = {}) => {
+export const dirtree = (options = {}) => {
   if (options.debug) console.log('options', inspect(options, false, null));
 
   const output = treeify.asTree(
@@ -58,5 +60,3 @@ const dirtree = (options = {}) => {
 
   return output;
 };
-
-export default dirtree;
