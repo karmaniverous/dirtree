@@ -23,5 +23,6 @@ module.exports = (api) => {
         },
       ],
     ],
+    targets: { node: 'current' },
   };
 };
