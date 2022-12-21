@@ -2,12 +2,8 @@
 
 import _ from 'lodash';
 
-// Load environment variables.
-import dotenv from 'dotenv';
-dotenv.config();
-
 // Import package exports.
-import dirtree from '../export';
+import { dirtree, PACKAGE_INFO } from '@karmaniverous/dirtree';
 
 // Create CLI.
 import { program } from 'commander';
@@ -48,7 +44,7 @@ program.parse();
 const { attribute, debug, depth, dir, exclude, version } = program.opts();
 
 // Execute CLI logic.
-if (version) console.log(process.env.NODE_PACKAGE_VERSION);
+if (version) console.log(PACKAGE_INFO.version);
 else {
   const output = dirtree({ attribute, debug, depth, dir, exclude });
 
