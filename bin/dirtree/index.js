@@ -3,7 +3,7 @@
 import _ from 'lodash';
 
 // Import package exports.
-import { dirtree, PACKAGE_INFO } from '@karmaniverous/dirtree';
+import { dirtree } from '@karmaniverous/dirtree';
 
 // Create CLI.
 import { program } from 'commander';
@@ -17,8 +17,6 @@ program.option(
   '-a, --attribute <string>',
   'Decorate files with an fs.Stats attribute. https://nodejs.dev/en/api/v19/fs/#fsstats'
 );
-
-// program.option('-b, --debug', 'Log internals.');
 
 program.option(
   '-n, --depth <int>',
@@ -37,16 +35,9 @@ program.option(
   (value) => (value ? new RegExp(value) : undefined)
 );
 
-program.option('-v, --version', 'Display package version.');
-
 // Parse CLI options from command line.
 program.parse();
-const { attribute, debug, depth, dir, exclude, version } = program.opts();
+const { attribute, debug, depth, dir, exclude } = program.opts();
 
 // Execute CLI logic.
-if (version) console.log(PACKAGE_INFO.version);
-else {
-  const output = dirtree({ attribute, debug, depth, dir, exclude });
-
-  if (!debug) console.log(output);
-}
+console.log(dirtree({ attribute, debug, depth, dir, exclude }));

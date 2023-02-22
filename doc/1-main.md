@@ -2,10 +2,22 @@
 
 Parses a directory into a nicely-formatted ASCII tree. Includes a CLI.
 
+To install:
+
+```bash
+npm install @karmaniverous/dirtree
+```
+
+To import:
+
+```js
+import { dirtree } from '@karmaniverous/dirtree`;
+```
+
 ## An Example
 
 ```text
-PS C:\Code\dirtree> dirtree -d src -a size
+PS C:\> dirtree -d src -a size
 └─ src
    ├─ cli
    │  └─ index.mjs: 1344
